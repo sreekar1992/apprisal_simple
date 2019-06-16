@@ -1,0 +1,66 @@
+import time
+employee=["nanda","murali","sreekar"]
+
+user=input("enter username")
+password=input("enter password")
+
+if(user=="sreekar"):
+   if(password=="welcome"):
+       print("welcome to login page")
+       t = time.strftime("%d/%m/%Y|%H:%M:%S")
+       print (t)
+       with open("file.txt", "a") as file:
+           file.write("login success/n")
+       with open("file.txt", "a") as file:
+           file.write(str(t))
+   else:
+       print("password is wrong")
+else:
+   print("invalid details")
+
+employee=input("Enter the name of Employee: \n")
+
+ch=input("Enter the l for excellent  2 for good 3 for average")
+if(ch=="1"):
+    print("You have selected excellent rating")
+    with open("file.txt", "a") as file:
+        file.write("You have selected excellent rating/n")
+elif(ch=="2"):
+    print("You have selected good rating")
+    with open("file.txt", "a") as file:
+        file.write("You have selected good rating/n")
+elif(ch=="3"):
+    print("You have selected average rating")
+    with open("file.txt", "a") as file:
+        file.write("You have selected average rating")
+else:
+    print("enter correct name")
+
+salary=int(input("Enter the salary of Employee \n"))
+if(salary>50000):
+    increment=0.15*salary
+    tax=0.10*salary
+    netsalary=salary+increment-tax
+    print("The incremented salary of "+employee+" is",netsalary)
+    with open("file.txt", "a") as file:
+        file.write(str(netsalary))
+elif(salary>39000):
+    increment=0.45*salary
+    tax=0.10*salary
+    netsalary=salary+increment-tax
+    print("The incremented salary of "+employee+" is",netsalary)
+    with open("file.txt", "a") as file:
+        file.write(str(netsalary))
+elif(salary>19000):
+    increment=0.90*salary
+    tax=0.10*salary
+    netsalary=salary+increment-tax
+    print("The incremented salary of "+employee+" is",netsalary)
+    with open("file.txt", "a") as file:
+        file.write(str(netsalary))
+else:
+    netsalary=salary
+    print("No taxalbe Amount")
+    print("The net salary of "+employee+" is",salary)
+    with open("file.txt", "a") as file:
+        file.write(str(salary))
